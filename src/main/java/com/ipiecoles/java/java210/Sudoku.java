@@ -210,12 +210,9 @@ public class Sudoku {
 					return true;
 				}
 			}
-			else {
-				sudoku[ligne][colonne] = 0;
-				return false;
-			}
-
 		}
+		sudoku[ligne][colonne] = 0;
+		return false;
 	}
 	
 }
