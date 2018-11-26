@@ -302,7 +302,7 @@ public class SudokuTest {
 	    
 		monSudoku.ecrireSudoku(tab);
 		
-		Assertions.assertThat(outContent.toString().trim()).isEqualToNormalizingNewlines(
+		Assertions.assertThat(outContent.toString()).isEqualToNormalizingNewlines(
 				" -----------------------\n" + 
 				"|   8   | 4   2 |   6   |\n" + 
 				"|   3 4 |       | 9 1   |\n" + 
