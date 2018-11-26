@@ -13,7 +13,19 @@ public class Sudoku {
 	}
 
 	public void setSudokuAResoudre(short[][] tableau) {
-		sudokuAResoudre = tableau;
+		short[][] tab = {
+			{0, 8, 0, 4, 0, 2, 0, 6, 0},
+			{0, 3, 4, 0, 0, 0, 9, 1, 0},
+			{9, 6, 0, 0, 0, 0, 0, 8, 4},
+			{0, 0, 0, 2, 1, 6, 0, 0, 0},
+			{0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 3, 5, 7, 0, 0, 0},
+			{8, 4, 0, 0, 0, 0, 0, 7, 5},
+			{0, 2, 6, 0, 0, 0, 1, 3, 0},
+			{0, 9, 0, 7, 0, 1, 0, 4, 0},
+		};
+		//sudokuAResoudre = tableau;
+		sudokuAResoudre = tab; //juste pour tester, remettre "tableau" après test
 	}
 
 	public static boolean ligneSaisieEstCoherente(String ligneSaisie) {
@@ -37,7 +49,7 @@ public class Sudoku {
 	 */
 	public Sudoku() {
 		//sudokuAResoudre = new short[9][9];
-		setSudokuAResoudre(new short[9][9]);
+		setSudokuAResoudre(new short[9][9]); 
 	}
 	
 	/**
@@ -200,13 +212,13 @@ public class Sudoku {
 		}
 
 		if (sudoku[ligne][colonne] != 0) {
-			return resoudre (ligne, colonne++, sudoku);
+			return resoudre (ligne, colonne+1, sudoku);
 		}
 
 		for (short k = 1; k <= 9; k++) {
 			if (estAutorise(ligne, colonne, k, sudoku)) {
 				sudoku[ligne][colonne] = k;
-				if (resoudre(ligne, colonne++, sudoku)) {
+				if (resoudre(ligne, colonne+1, sudoku)) {
 					return true;
 				}
 			}

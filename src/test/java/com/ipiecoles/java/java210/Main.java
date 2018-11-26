@@ -19,9 +19,9 @@ public class Main {
         sc.close();
 
         System.out.println(Sudoku.ligneSaisieEstCoherente(ligne));*/
-        Sudoku.demandeCoordonneesSudoku();
-        String[] tabCoordonnees = Sudoku.demandeCoordonneesSudoku();
-        s.remplitSudokuATrous(tabCoordonnees);
+        //Sudoku.demandeCoordonneesSudoku();
+        //String[] tabCoordonnees = Sudoku.demandeCoordonneesSudoku();
+        //s.remplitSudokuATrous(Sudoku.demandeCoordonneesSudoku()); //juste pour tester, remettre après test
         s.ecrireSudoku(s.getSudokuAResoudre());
         if(s.resoudre(0, 0, s.getSudokuAResoudre())) {
             s.ecrireSudoku(s.getSudokuAResoudre());
