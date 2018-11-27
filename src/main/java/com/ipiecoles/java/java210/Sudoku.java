@@ -30,15 +30,22 @@ public class Sudoku {
 
 	public static boolean ligneSaisieEstCoherente(String ligneSaisie) {
 		if (ligneSaisie == null || ligneSaisie.trim().equals("")) {
-			System.out.println("Les coordonnées du chiffre et/ou sa valeur ne peuvent pas être nulles, vides ou remplies avec des espaces\n");
+			System.out.println("Les coordonnées du chiffre et/ou sa valeur ne peuvent pas être nulles, vides ou remplies avec des espaces");
 			return false;
 		}
 		else if (ligneSaisie.length() != 3) {
-			System.out.println("Les coordonnées du chiffre et/ou sa valeur doit faire 3 caractères\n");
+			System.out.println("Les coordonnées du chiffre et/ou sa valeur doit faire 3 caractères");
 			return false;
 		}
-		else if (!ligneSaisie.matches("[0-8][0-8][1-9]")) {
-			System.out.println("L'abscisse et l'ordonnée doivent être compris entre 0 et 8, la valeur entre 1 et 9\n");
+		//else if (!ligneSaisie.matches("[0-8][0-8][1-9]")) {
+			//System.out.println("L'abscisse et l'ordonnée doivent être compris entre 0 et 8, la valeur entre 1 et 9");
+			//return false;
+		//}
+		else if(!ligneSaisie.substring(0, 1).matches("[0-8]") || 
+				!ligneSaisie.substring(1, 2).matches("[0-8]") || 
+				!ligneSaisie.substring(2, 3).matches("[1-9]")) 
+		{
+			System.out.println("L'abscisse et l'ordonnée doivent être compris entre 0 et 8, la valeur entre 1 et 9");
 			return false;
 		}
 		return true;
